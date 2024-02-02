@@ -1,11 +1,33 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react", "react-hooks"],
+  "plugins": ["react", "react-hooks", "import"],
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended"
   ],
-  "rules": {}
+  "rules": {
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "builtin"],
+        "newlines-between": "always"
+      }
+    ]
+  }
 }
