@@ -16,7 +16,6 @@ const LoginPage = () => {
   const login = useAuthStore((state) => state.login);
 
   const handleSubmit = async (values: TLoginFormValues) => {
-    console.log("handleSubmit", values);
     await login(values);
     navigate("/counter");
   };

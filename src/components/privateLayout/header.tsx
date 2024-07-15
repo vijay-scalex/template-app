@@ -7,7 +7,7 @@ const Header = () => {
   const location = useLocation();
 
   const [title, setTitle] = useState<string>("");
-  console.log("title", title);
+
   const logout = useAuthStore((state) => state.logout);
 
   const handleLogout = () => {
